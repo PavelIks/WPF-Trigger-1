@@ -1,0 +1,25 @@
+﻿<Window x:Class="Trigger.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Trigger"
+        mc:Ignorable="d"
+        Title="Trigger" Height="200" Width="400" MaxHeight="300" MinHeight="100" MaxWidth="500" MinWidth="300" WindowStartupLocation="CenterScreen" Background="#FF6AFF02">
+    
+    <Window.Resources>
+        <Style TargetType="Label" x:Key="OK">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ElementName=Button1, Path=IsPressed}" Value="True">
+                    <Setter Property="Foreground" Value="Red"></Setter>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    
+    <Grid>
+        <Button Name="Button1"  Width="50" Height="50" />
+        <Label Name="Lable" Style="{StaticResource OK}" Width="50" Height="50" Content="DARK" Background="Black"  Margin="72.964,59.5,269.035,59.5" />
+    </Grid>
+    
+</Window>
